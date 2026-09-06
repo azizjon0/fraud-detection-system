@@ -1,8 +1,7 @@
 from sqlalchemy import Boolean, Column, DateTime, Float, Integer, String
 from sqlalchemy.sql import func
 
-from database import Base
-
+from src.database import Base
 
 class Transaction(Base):
     __tablename__ = "transactions"

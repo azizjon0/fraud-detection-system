@@ -1,6 +1,6 @@
-from database import SessionLocal
-from models import Transaction
-from predict import predict_transaction
+from src.database import SessionLocal
+from src.models import Transaction
+from src.predict import predict_transaction
 
 
 def process_transaction(
