@@ -1,11 +1,11 @@
-from sqlalchemy import  Boolean, Column, DateTime, Float, Integer, String
+from sqlalchemy import Boolean, Column, DateTime, Float, Integer, String
 from sqlalchemy.sql import func
 
 from database import Base
 
 
 class Transaction(Base):
-    __tablename__ = "transaction"
+    __tablename__ = "transactions"
 
     id = Column(Integer, primary_key=True)
 
@@ -14,7 +14,7 @@ class Transaction(Base):
     amount = Column(Float, nullable=False)
 
     name_orig = Column(String(100))
-    old_balance = Column(Float)
+    old_balance_orig = Column(Float)
 
     name_dest = Column(String(100))
     old_balance_dest = Column(Float)
@@ -27,4 +27,4 @@ class Transaction(Base):
 
     actual_fraud = Column(Boolean)
 
-    created_at = Column(DateTime, default=func.now())
+    created_at = Column(DateTime, server_default=func.now())
